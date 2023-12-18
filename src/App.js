@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+function Image() {
+  return <img src="sougata.jpeg" alt="sougata" className="profile-image" />;
+}
+
+function Name() {
+  return <h2 className="profile-name">Sougata Das</h2>;
+}
+
+function Description() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <p className="profile-desc">
+      Hi, myself sougata. I am a programming enthusiast. Loves to develope
+      website and small tool to help me in my daily life.
+    </p>
+  );
+}
+function Skill(props) {
+  const style = { backgroundColor: props.color };
+  return (
+    <li className="skill" style={style}>
+      {props.skill} {props.emoji}
+    </li>
+  );
+}
+function Skillset() {
+  return (
+    <div>
+      <ul className="skill-list">
+        <Skill color="green" skill="React.js" emoji="💪" />
+        <Skill color="red" skill="Node.js" emoji="👍" />
+        <Skill color="pink" skill="Java Script" emoji="👍" />
+        <Skill color="yellow" skill="Python" emoji="💪" />
+        <Skill color="blue" skill="GIT & Github" emoji="💪" />
+        <Skill color="purple" skill="PHP" emoji="👍" />
+        <Skill color="brown" skill="Mysql" emoji="👍" />
+      </ul>
     </div>
   );
+}
+
+function Card() {
+  return (
+    <div className="card">
+      <Image />
+      <Name />
+      <Description />
+      <Skillset />
+    </div>
+  );
+}
+function App() {
+  return <Card />;
 }
 
 export default App;
